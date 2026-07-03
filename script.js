@@ -49,12 +49,18 @@ const observer = new IntersectionObserver((entries)=>{
         if(entry.isIntersecting){
 
             entry.target.classList.add("show");
+            observer.unobserve(entry.target);
 
         }
 
     });
 
-},{threshold:.2});
+},{
+    threshold:0.15,
+    rootMargin:"0px 0px -80px 0px"
+});
+
+
 
 cards.forEach(card=>{
 

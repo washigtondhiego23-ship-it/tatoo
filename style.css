@@ -519,19 +519,37 @@ transition:1s;
 
 }
 
-.card.show{
+.card{
 
-opacity:1;
+opacity:0;
 
-transform:translateY(0);
+transition:
+transform .9s ease,
+opacity .9s ease;
 
 }
 
 .card.left{
 
-transform:translateX(-180px);
+opacity:0;
+transform:translateX(-120px);
 
 }
+
+.card.right{
+
+opacity:0;
+transform:translateX(120px);
+
+}
+
+.card.show{
+
+opacity:1;
+transform:translateX(0);
+
+}
+
 
 .card.right{
 
@@ -854,56 +872,42 @@ line-height:90px;
 
 }
 
-@media(max-width:768px){
-
-nav ul{
-
-display:none;
-
-}
-
-.menu{
-
-display:block;
-
-}
-
-.gallery-grid,
-.artist-grid{
-
-grid-template-columns:1fr;
-
-}
+@media(max-width:480px){
 
 .hero-content h1{
 
-font-size:58px;
+font-size:42px;
+line-height:44px;
 
-line-height:60px;
+}
+
+.card img{
+
+height:220px;
+
+}
+
+.artist img{
+
+height:260px;
 
 }
 
 .title h2{
 
-font-size:42px;
+font-size:28px;
 
 }
 
-.numbers{
+.btn{
 
-flex-direction:column;
-
-gap:40px;
-
-}
-
-.hero{
-
-height:90vh;
+width:100%;
+text-align:center;
 
 }
 
-}/*==================================
+}
+/*==================================
 LIGHTBOX PREMIUM
 ==================================*/
 
