@@ -56,8 +56,8 @@ const observer = new IntersectionObserver((entries)=>{
     });
 
 },{
-    threshold:0.15,
-    rootMargin:"0px 0px -80px 0px"
+    threshold:0.1,
+    rootMargin:"0px 0px 100px 0px"
 });
 
 
@@ -179,7 +179,7 @@ hero.style.transform = `translateY(${y*0.3}px) scale(1.08)`;
 // LIGHTBOX
 //=============================
 
-const galleryImages = document.querySelectorAll(".gallery img");
+const galleryImages = document.querySelectorAll(".gallery .card img");
 
 const lightbox = document.createElement("div");
 
@@ -219,16 +219,16 @@ lightbox.classList.remove("active");
 // EFEITO MOUSE
 //=============================
 
-const cursor = document.createElement("div");
+const cursorMouse = document.createElement("div");
 
-cursor.className = "cursor";
+cursorMouse.className = "cursor";
 
-document.body.appendChild(cursor);
+document.body.appendChild(cursorMouse);
 
 window.addEventListener("mousemove",(e)=>{
 
-cursor.style.left = e.clientX+"px";
-cursor.style.top = e.clientY+"px";
+cursorMouse.style.left = e.clientX+"px";
+cursorMouse.style.top = e.clientY+"px";
 
 });
 
@@ -271,24 +271,10 @@ duration:500
 });
 
 //=============================
-// EFEITO NAS IMAGENS
+// EFEITO NAS IMAGENS - REMOVIDO
 //=============================
 
-galleryImages.forEach(img=>{
-
-img.addEventListener("mousemove",(e)=>{
-
-const rect = img.getBoundingClientRect();
-
-const x = e.clientX - rect.left;
-
-const y = e.clientY - rect.top;
-
-img.style.transformOrigin = `${x}px ${y}px`;
-
-});
-
-});
+// Este código foi removido para evitar conflitos com as animações
 
 //=============================
 // TEXTO HERO
@@ -326,23 +312,25 @@ easing:"ease-out"
 // CURSOR INTELIGENTE
 //=====================================
 
-const cursor = document.querySelector(".cursor");
+const cursorElement = document.querySelector(".cursor");
 
-document.querySelectorAll("a, button, .card, .artist").forEach(el=>{
+if(cursorElement) {
+    document.querySelectorAll("a, button, .card, .artist").forEach(el=>{
 
-    el.addEventListener("mouseenter",()=>{
+        el.addEventListener("mouseenter",()=>{
 
-        cursor.classList.add("hover");
+            cursorElement.classList.add("hover");
+
+        });
+
+        el.addEventListener("mouseleave",()=>{
+
+            cursorElement.classList.remove("hover");
+
+        });
 
     });
-
-    el.addEventListener("mouseleave",()=>{
-
-        cursor.classList.remove("hover");
-
-    });
-
-});
+}
 
 //=====================================
 // BRILHO ACOMPANHANDO O MOUSE
@@ -475,9 +463,11 @@ sec.style.backgroundPositionY=(y*(0.05*(index+1)))+"px";
 });
 
 //=====================================
-// EFEITO NAS FOTOS
+// EFEITO NAS FOTOS - DESABILITADO PARA PERMITIR ANIMAÇÕES
 //=====================================
 
+// Código comentado para não interferir com as animações de entrada dos cards
+/*
 document.querySelectorAll(".card").forEach(card=>{
 
 card.addEventListener("mousemove",(e)=>{
@@ -503,6 +493,7 @@ card.style.transform="perspective(1000px) rotateX(0) rotateY(0) scale(1)";
 });
 
 });
+*/
 
 //=====================================
 // STAGGER NAS IMAGENS

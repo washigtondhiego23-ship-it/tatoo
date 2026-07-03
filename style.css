@@ -515,17 +515,7 @@ opacity:0;
 
 transform:translateY(120px);
 
-transition:1s;
-
-}
-
-.card{
-
-opacity:0;
-
-transition:
-transform .9s ease,
-opacity .9s ease;
+transition:transform .9s ease, opacity .9s ease;
 
 }
 
@@ -546,21 +536,7 @@ transform:translateX(120px);
 .card.show{
 
 opacity:1;
-transform:translateX(0);
-
-}
-
-
-.card.right{
-
-transform:translateX(180px);
-
-}
-
-.card.left.show,
-.card.right.show{
-
-transform:translateX(0);
+transform:translateX(0) !important;
 
 }
 
@@ -872,30 +848,132 @@ line-height:90px;
 
 }
 
-@media(max-width:480px){
+@media(max-width:768px){
+
+.marquee{
+
+padding:20px 0;
+
+overflow:hidden;
+
+height:auto;
+
+max-width:100vw;
+
+}
+
+.marquee-track{
+
+font-size:28px !important;
+
+letter-spacing:1px !important;
+
+animation:marquee 15s linear infinite !important;
+
+white-space:nowrap;
+
+max-width:100%;
+
+display:inline-block;
+
+}
+
+.gallery-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.artist-grid{
+
+grid-template-columns:1fr;
+
+}
+
+nav{
+
+padding:15px 5%;
+
+}
+
+nav ul{
+
+gap:15px;
+
+}
+
+nav a{
+
+font-size:12px;
+
+}
 
 .hero-content h1{
 
-font-size:42px;
-line-height:44px;
+font-size:50px;
+line-height:50px;
+
+letter-spacing:3px;
+
+}
+
+.hero-content p{
+
+font-size:16px;
+
+}
+
+.gallery{
+
+padding:80px 5%;
+
+}
+
+.gallery-grid{
+
+gap:20px;
 
 }
 
 .card img{
 
-height:220px;
+height:280px;
+
+}
+
+.artists{
+
+padding:80px 5%;
+
+}
+
+.artist-grid{
+
+gap:20px;
 
 }
 
 .artist img{
 
-height:260px;
+height:280px;
 
 }
 
 .title h2{
 
-font-size:28px;
+font-size:40px;
+
+}
+
+.title span{
+
+font-size:13px;
+
+}
+
+.about{
+
+padding:80px 5%;
 
 }
 
@@ -903,6 +981,215 @@ font-size:28px;
 
 width:100%;
 text-align:center;
+
+padding:15px 30px;
+
+}
+
+.numbers{
+
+padding:60px 5%;
+
+flex-direction:column;
+
+gap:40px;
+
+}
+
+.number h2{
+
+font-size:50px;
+
+}
+
+.number p{
+
+font-size:16px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.marquee{
+
+padding:10px 0;
+
+overflow:hidden;
+
+display:none;
+
+}
+
+.marquee-track{
+
+font-size:16px !important;
+
+letter-spacing:0.5px !important;
+
+animation:marquee 15s linear infinite !important;
+
+}
+
+nav{
+
+padding:12px 4%;
+
+}
+
+nav ul{
+
+gap:10px;
+
+}
+
+nav a{
+
+font-size:10px;
+
+}
+
+.hero-content h1{
+
+font-size:32px;
+line-height:36px;
+
+letter-spacing:2px;
+
+}
+
+.hero-content p{
+
+font-size:14px;
+
+margin-bottom:20px;
+
+}
+
+.btn{
+
+padding:12px 25px;
+
+font-size:13px;
+
+}
+
+.gallery{
+
+padding:60px 4%;
+
+}
+
+.gallery-grid{
+
+gap:15px;
+
+}
+
+.card img{
+
+height:180px;
+
+}
+
+.artists{
+
+padding:60px 4%;
+
+}
+
+.artist-grid{
+
+gap:15px;
+
+}
+
+.artist img{
+
+height:200px;
+
+}
+
+.artist h3{
+
+margin:15px;
+
+font-size:18px;
+
+}
+
+.artist p{
+
+font-size:12px;
+
+}
+
+.title h2{
+
+font-size:24px;
+
+}
+
+.title span{
+
+font-size:11px;
+
+}
+
+.about{
+
+padding:60px 4%;
+
+}
+
+.about-text p{
+
+font-size:14px;
+
+line-height:1.6;
+
+}
+
+.numbers{
+
+padding:50px 4%;
+
+flex-direction:column;
+
+gap:30px;
+
+}
+
+.number h2{
+
+font-size:36px;
+
+}
+
+.number p{
+
+font-size:14px;
+
+}
+
+footer{
+
+padding:40px 4%;
+
+text-align:center;
+
+}
+
+footer h2{
+
+font-size:24px;
+
+}
+
+footer p{
+
+font-size:12px;
 
 }
 
